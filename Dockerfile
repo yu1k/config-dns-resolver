@@ -35,17 +35,12 @@ RUN chown -R unbound:unbound $HOME/logs/
 COPY ./unbound.conf /etc/unbound/
 COPY ./local.zone /etc/unbound/include/
 
-# conf generate
+# interface config update
 COPY ./unbound-conf.sh $HOME/
 RUN chmod +x $HOME/unbound-conf.sh
-#CMD ["/bin/bash", "/home/unbound-conf.sh"]
 
 # startup script
 COPY ./unbound-startup-script.sh /usr/local/sbin/
 RUN chmod +x /usr/local/sbin/unbound-startup-script.sh
 
-#CMD ["echo", "-n", "Starting Unbound..."]
-#CMD ["/usr/sbin/unbound","-d"]
-#RUN /etc/init.d/unbound start && /etc/init.d/unbound restart
 CMD ["/bin/bash", "/usr/local/sbin/unbound-startup-script.sh"]
-#RUN unbound-checkconf
