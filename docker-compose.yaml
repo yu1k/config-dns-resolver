@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  dns_resolver_ns:
+    tty: true
+    build: ./
+    container_name: dns_resolver_ns
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    volumes:
+      - ./logs/:/home/logs/
+    networks:
+      - br_dns_network
+    restart: always
+
+networks:
+  br_dns_network:
+    external: true
