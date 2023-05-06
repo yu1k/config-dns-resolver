@@ -33,7 +33,7 @@ $ git clone https://github.com/yu1k/config-dns-resolver.git config-dns-resolver 
 
 リポジトリをcloneします。
 
-`./unbound.conf` の18行目~のIPv4/IPv6の項目、42行目~のACLの項目をUnboundを動かす環境にあわせて適当に変更します。
+`./unbound.conf` の18行目~ のIPv4/IPv6の項目、42行目~ のACLの項目をUnboundを動かす環境にあわせて適当に変更します。
 
 `./unbound.conf` の `forward-zone: ` の `forward-addr: ` は適当なDNSリゾルバを指定します。`./unbound.conf`では `8.8.8.8` , `8.8.4.4` を指定しています。
 
